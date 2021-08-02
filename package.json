@@ -1,0 +1,22 @@
+{
+  "name": "ades-ca3-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RetMenTos/ADES-CA3-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RetMenTos/ADES-CA3-Backend/issues"
+  },
+  "homepage": "https://github.com/RetMenTos/ADES-CA3-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
