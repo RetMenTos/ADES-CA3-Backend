@@ -1,25 +1,28 @@
 const express = require("express");
-const userModel = require("./models");
+const scoreModel = require("./models");
 const app = express();
 
-app.post("/add_user", async (request, response) => {
-    const user = new userModel(request.body);
+app.post("/add_score", async (req, res) => {
+    const reqName = req.query.name;
+    const reqScore = req.query.score;
+    const requestJSON = JSON.parse(`{ "name": "${reqName}", "score": ${reqScore} }`);
+    const score = new scoreModel(requestJSON);
   
     try {
-      await user.save();
-      response.send(user);
+      await score.save();
+      res.send(score);
     } catch (error) {
-      response.status(500).send(error);
+      res.status(500).send(error);
     }
 });
 
-app.get("/users", async (request, response) => {
-    const users = await userModel.find({});
+app.get("/scores", async (req, res) => {
+    const scores = await scoreModel.find({});
   
     try {
-      response.send(users);
+      res.send(scores);
     } catch (error) {
-      response.status(500).send(error);
+      res.status(500).send(error);
     }
 });
 

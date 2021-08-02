@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const UserSchema = new mongoose.Schema({
+const ScoreSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
-  age: {
+  score: {
     type: Number,
     default: 0,
   },
 });
 
-const User = mongoose.model("User", UserSchema);
+const Score = mongoose.model("Score", ScoreSchema);
 
-module.exports = User;
+module.exports = Score;
